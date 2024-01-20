@@ -192,6 +192,59 @@ In the initial stages, `c` was set at a relatively high value, resulting in a sl
 | `3^(-6)` | 5.501 ± 0.259           | 7.444 ± 1.645          |
 | `3^(-7)` | 9.573 ± 0.361           | 9.562 ± 1.874          |
 
+![image](https://github.com/sprasadhpy/Kernel-perceptron-Handwritten-Digit-Classification-/assets/40602129/535069db-cd52-4637-af00-19ad19513df1)
+
+## Finding the Optimal Value for `c` in Gaussian Kernel
+
+Using the same procedure, we search for the optimal value for `c`. From the table below, it is clear that `3^(-4)` is the best choice, yielding a mean test error rate of `3.145 ± 0.355`. This result strikingly resembles the one obtained using a polynomial kernel. Therefore, for this dataset, it appears that we may not be fully leveraging the expressive potential of the Gaussian kernel. Alternatively, it's possible that we have not yet discovered the optimal feasible range for the hyperparameter 'c'.
+
+### Test Error Rates for Different Degrees of Gaussian Kernel
+
+| Optimal Degree `d*` | Test Error Rate (%) |
+|---------------------|---------------------|
+| `1/3^4`             | 2.7419              |
+| `1/3^4`             | 3.0108              |
+| `1/3^4`             | 3.0108              |
+| `1/3^4`             | 2.8495              |
+| `1/3^3`             | 3.4409              |
+| `1/3^4`             | 2.6344              |
+| ...                 | ...                 |
+| `1/3^4`             | 3.4409              |
+
+*Note: Table truncated for brevity.*
+
+Average Degree: 0.0148, Standard Deviation: 0.0074  
+Average Test Error Rate (%): 2.9758, Standard Deviation: 0.3596
+
+
+# One-versus-One Generalized Polynomial Kernel Perceptron Performance Analysis
+
+In this section, we present the results of the performance evaluation of the One-versus-One generalized polynomial kernel perceptron. The obtained results are quite comparable to those of the One-versus-Rest version. To ensure the reliability of our findings, we performed multiple iterations of the evaluation procedure.
+
+## Evaluation Procedure
+
+The evaluation procedure involved repeating the experiments across various polynomial kernel degrees. For each degree, we conducted 20 runs to calculate the mean and standard deviation of both the training and test error rates.
+
+## Results
+
+Below is a summary of the obtained results:
+
+| Degree | Train Error (Mean ± SD) | Test Error (Mean ± SD) |
+|--------|-------------------------|------------------------|
+|   1    | 5.486 ± 0.609           | 7.003 ± 0.878          |
+|   2    | 1.550 ± 0.297           | 4.266 ± 0.520          |
+|   3    | 0.827 ± 0.202           | 3.718 ± 0.438          |
+|   4    | 0.540 ± 0.199           | 3.522 ± 0.422          |
+|   5    | 0.475 ± 0.231           | 3.452 ± 0.354          |
+|   6    | 0.296 ± 0.049           | 3.661 ± 0.393          |
+|   7    | 0.247 ± 0.060           | 3.535 ± 0.342          |
+
+These results represent the mean and standard deviation of training and test error rates over 20 runs with different polynomial kernel degrees in percentage for the One-versus-One Classifier.
+
+
+
+
+
 
 
 
