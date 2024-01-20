@@ -241,7 +241,44 @@ Below is a summary of the obtained results:
 
 These results represent the mean and standard deviation of training and test error rates over 20 runs with different polynomial kernel degrees in percentage for the One-versus-One Classifier.
 
+## Train Vs. Test Error for different polynomial Kernel degre
+![image](https://github.com/sprasadhpy/Kernel-perceptron-Handwritten-Digit-Classification-/assets/40602129/7d86e390-2169-40f5-8869-62cf1caf60f1)
 
+
+Certainly! Here's the content provided in README format:
+
+# Optimal Degree and Test Error Analysis
+
+In the following table, we present the optimal degree (\(d^*\)) and the corresponding test error rates in percentage for a series of experiments:
+
+| Optimal Degree \(d^*\) | Test Error Rate (%) |
+|-----------------------|----------------------|
+|          5            |        2.8495        |
+|          4            |        3.2796        |
+|          5            |        2.8495        |
+|          6            |        3.4946        |
+|          4            |        3.1183        |
+|          5            |        3.4946        |
+|          6            |        3.3333        |
+|          4            |        3.1720        |
+|          5            |        3.1720        |
+|          6            |        3.4409        |
+|          5            |        3.4946        |
+|          5            |        3.4946        |
+|          4            |        3.1183        |
+|          6            |        3.0645        |
+|          4            |        3.7097        |
+|          4            |        3.0645        |
+|          5            |        3.8172        |
+
+Average Degree: 4.7500, Standard Deviation: 0.8292
+Average Test Error Rate (%): 3.2500, Standard Deviation: 0.2981
+
+When evaluating the One-versus-Rest (OvR) and One-versus-One (OvO) approaches, it becomes apparent that they involve a different number of classifiers. Given that there are ten distinct handwritten digits, the One-versus-All approach requires 10 classifiers, while the One-versus-One approach demands a much larger set of 45 classifiers. However, it's worth noting that in the One-versus-One scheme, each classifier is trained on a smaller subset of the data, which can be advantageous. In our experiments, we observed that each training epoch of the OvO approach takes more time to complete, but it converges rapidly, with just three epochs yielding satisfactory results. Consequently, in our specific context, both approaches offer viable options.
+
+One potential drawback of the One-versus-One method lies in the possibility of tied voting when employing a voting system for decision-making. Moreover, when dealing with more classes, the OvO approach is expected to require additional computational time, as the vote-counting process for making predictions already consumes a substantial amount of time.
+
+Conversely, when training an OvR version of the perceptron, a challenge emerges due to the presence of severe class imbalance. As a result, it may be necessary to implement a random sampling scheme to select data from the "rest" category in order to restore class balance during the training process.
 
 
 
